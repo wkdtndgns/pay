@@ -55,13 +55,16 @@ else{
     let monthCount =0;
     var test =preMonth;
 
-    for(var i=0; i<31; i++){
-        test.setDate(test.getDate()+1)
+    // for(var i=0; i<31; i++){
+    //     test.setDate(test.getDate()+1)
 
-        if(test.getDay()!==6 && test.getDay()!==0){
-            monthCount++;
-        }
-    }
+    //     if(test.getDay()!==6 && test.getDay()!==0){
+    //         monthCount++;
+    //     }
+      
+    // }
+
+    monthCount=30;
 
     console.log(monthCount);
 
@@ -85,9 +88,11 @@ else{
         while(true){
             test.setDate(test.getDate()+1)
 
-            if(test.getDay()!==6 && test.getDay()!==0){
-                workCount++;
-            }
+            // if(test.getDay()!==6 && test.getDay()!==0){
+            //     workCount++;
+            // }
+
+            workCount++;
 
             if(test.getDate()===dt.getDate() && test.getMonth()===dt.getMonth()){
                 break;
@@ -110,9 +115,13 @@ else{
         
         for(var i=payday; i<dt.getDate(); i++){
             test.setDate(test.getDate()+1)   
-            if(test.getDay()!==6 && test.getDay()!==0){
-                workCount++;
-            }
+
+            // if(test.getDay()!==6 && test.getDay()!==0){
+            //     workCount++;
+            // }
+
+            workCount++;
+            
         }
 
         monthGaze = (pay/monthCount)*workCount +minute+second;
@@ -126,7 +135,7 @@ else{
 
         let todayGaze = 0;
 
-        if(dt.getDay()!==6 && dt.getDay()!==0){      // 오늘이 평일이라면 지금까지 번 돈이 todayGaze랑 같이 올라가도록 하루치를 뺴고 todayGaze 플러스 
+        // if(dt.getDay()!==6 && dt.getDay()!==0){      // 오늘이 평일이라면 지금까지 번 돈이 todayGaze랑 같이 올라가도록 하루치를 뺴고 todayGaze 플러스 
 
             if(startTime<dt.getHours() && dt.getHours()<(startTime+workTime)){   //지금 시간이 오전 9 to 6 사이일떄
                 todayGaze = ((pay/month[1])/9)*(dt.getHours()-9)+minute+second;    
@@ -137,7 +146,7 @@ else{
             }
 
             monthGaze = monthGaze-(pay/month[1])+todayGaze;
-        }
+        // }
 
         if(monthGaze>pay){
             monthGaze=pay;
