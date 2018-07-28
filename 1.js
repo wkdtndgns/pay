@@ -13,17 +13,16 @@ let month12 = [31 , 20];
 
 let month2018 = [month1 , month2 , month3 , month4, month5, month6, month7, month8, month9, month10, month11, month12]; 
 
-let payday = 2; // 월급날 
+let payday = 23; // 월급날 
 let pay = 100;  //월급
+
 let startTime = 9;  // 근무 시작시간
 let workTime = 9;   //근무 시간 
 
 //시연할떄 필요할 거 같아서 
 
-let adminDate = 0; // 날짜 지정
+let adminDate = 25; // 날짜 지정
 let adminHours = 0;    // 시간 지정  
-
-
 
 if(payday>31 || payday<0 ){
     console.log("다시 입력");
